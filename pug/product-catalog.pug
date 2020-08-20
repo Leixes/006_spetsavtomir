@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+html(lang="en")
+    include components/head.pug
+    body
+        include components/header.pug
+        main#catalog
+            section#breadcrumbs
+                a(href="/") Главная
+                | /
+                a(href="#") Каталог товаров
+            section#content
+                h1 Название категории товаров
+                .col-lg-12.row
+                    .col-lg-3
+                        .filter
+                            form(action="", method="post")
+                                section
+                                    ._title
+                                        h4 Фильтр
+                                    .search
+                                        input(type="search", name="")
+                                    a(data-toggle="collapse" data-target="#all-filter").collapse-linck._all-filter Все фильтры
+                                        .arrow-dropdown
+                                    #all-filter(data-parent="#accordion").collapse
+                                    a(data-toggle="collapse" data-target="#price").collapse-linck._price Цена
+                                        .arrow-dropdown
+                                    #price(data-parent="#accordion").collapse.show
+                                        p от
+                                        input(type="text", placeholder="0 ₽")
+                                        p до
+                                        input(type="text", placeholder="10000 ₽")
+
+                                        div.rel
+                                            <input type="range" multiple value="10,80" />
+                                        
+                                    a(data-toggle="collapse" data-target="#collapseOne").collapse-linck._maker Производитель
+                                        .arrow-dropdown
+                                    #maker(data-parent="#accordion").collapse.show
+                                        .item.row
+                                            input#maker_1(type="checkbox", name="Производитель 1")
+                                            label(for="maker_1")
+                                                img(src="", alt="").item-ico
+                                                p Производитель 1
+                                        .item.row
+                                            input#maker_2(type="checkbox", name="Производитель 2")
+                                            label(for="maker_2")
+                                                img(src="", alt="").item-ico
+                                                p Производитель 2
+                                        .item.row
+                                            input#maker_3(type="checkbox", name="Производитель 3")
+                                            label(for="maker_3")
+                                                img(src="", alt="").item-ico
+                                                p Производитель 3
+                                        
+                                    a(data-toggle="collapse" data-target="#collapseOne").collapse-linck._have В наличии
+                                        .arrow-dropdown
+                                    #have(data-parent="#accordion").collapse.show
+                                        .item.row.have
+                                            input#yeshave(type="checkbox", name="Y")
+                                            label(for="yeshave")
+                                                p В наличии
+                                        .item.row.have
+                                            input#nothave(type="checkbox", name="N")
+                                            label(for="nothave")
+                                                p В наличии
+                                    a(data-toggle="collapse" data-target="#collapseOne").collapse-linck._volume Объём
+                                        .arrow-dropdown
+                                    #volume(data-parent="#accordion").collapse.show
+                                        .item.row.have
+                                            input#1(type="checkbox", name="1")
+                                            label(for="1")
+                                                p 1 л
+                                        .item.row.have
+                                            input#4(type="checkbox", name="4")
+                                            label(for="4")
+                                                p 4 л
+                                        .item.row.have
+                                            input#5(type="checkbox", name="5")
+                                            label(for="5")
+                                                p 5 л
+                                        .item.row.have
+                                            input#10(type="checkbox", name="10")
+                                            label(for="10")
+                                                p 10 л
+                                        .item.row.have
+                                            input#15(type="checkbox", name="15")
+                                            label(for="15")
+                                                p 15 л
+                                        .item.row.have
+                                            input#20(type="checkbox", name="20")
+                                            label(for="20")
+                                                p 20 л
+                                        .item.row.have
+                                            input#40(type="checkbox", name="40")
+                                            label(for="40")
+                                                p 40 л
+                                        
+                        .row-btn
+                            button(type="submit").btn._main Применить
+                        .row-btn
+                            button(type="submit").btn._main.__empty Сбросить
+                    .col-lg-9.content
+                        .row
+                            ul.sort.col-lg-12.row Сортировать по:
+                                li
+                                    a(href="").btn-clik цене - убывание
+                                    .arrow-sort
+                            .list.col-lg-12.row
+                                .product._box.row.tab-header
+                                    .preview
+                                        .ico
+                                        .lore
+                                    form(action="").row-storage
+                                        .col-md-3
+                                            .status
+                                                img(src="/assets/img/info.png", alt="" style="width: 18px;height: 18px;margin-right: 4px;")
+                                                p Наличие
+                                        .col-md-2
+                                            .storage
+                                                p Склад
+                                        .col-md-2
+                                            .data
+                                                p Дата поставки на склад
+                                        .col-md-2
+                                            .price
+                                                p Цена, ₽
+                                        .col-md-2
+                                            .quantity
+                                                p Кол-во
+                                        .col-md-2
+                                            p 
+                                .product._box.row
+                                    .preview
+                                        img(src="", alt="").ico
+                                        .lore
+                                            a(href="#")._title IDEMITSU Артикул 789456123
+                                            a(href="#")._category Масло моторное IDEMITSU 0W-20 SN/GF-5
+                                    form(action="").row-storage
+                                        .col-md-3
+                                            .status
+                                                .color(style="").false
+                                                p В наличии
+                                        .col-md-2
+                                            .storage
+                                                p Склад 1
+                                        .col-md-2
+                                            .data
+                                                img(src="/assets/img/info.png", alt="") 
+                                                | 7 апреля
+                                                p._time после 15:00
+                                        .col-md-2
+                                            .price
+                                                p 1 050, 00
+                                        .col-md-2
+                                            .quantity
+                                                a._btn._min -
+                                                input(type="text")._quantity
+                                                a._btn._max +
+                                        .col-md-2
+                                            button(type="submit").basket
+                                    form(action="").row-storage
+                                        .col-md-3
+                                            .status
+                                                .color(style="")
+                                                p В наличии
+                                        .col-md-2
+                                            .storage
+                                                p Склад 1
+                                        .col-md-2
+                                            .data
+                                                img(src="/assets/img/info.png", alt="") 
+                                                | 7 апреля
+                                                p._time после 15:00
+                                        .col-md-2
+                                            .price
+                                                p 1 050, 00
+                                        .col-md-2
+                                            .quantity
+                                                a._btn._min -
+                                                input(type="text")._quantity
+                                                a._btn._max +
+                                        .col-md-2
+                                            button(type="submit").basket
+                                .product._box.row
+                                    .preview
+                                        img(src="/assets/img/unnamed.png", alt="").ico
+                                        .lore
+                                            a(href="#")._title IDEMITSU Артикул 789456123
+                                            a(href="#")._category Масло моторное IDEMITSU 0W-20 SN/GF-5
+                                    form(action="").row-storage
+                                        .col-md-3
+                                            .status
+                                                .color(style="").false
+                                                p В наличии
+                                        .col-md-2
+                                            .storage
+                                                p Склад 1
+                                        .col-md-2
+                                            .data
+                                                img(src="/assets/img/info.png", alt="") 
+                                                | 7 апреля
+                                                p._time после 15:00
+                                        .col-md-2
+                                            .price
+                                                p 1 050, 00
+                                        .col-md-2
+                                            .quantity
+                                                a._btn._min -
+                                                input(type="text")._quantity
+                                                a._btn._max +
+                                        .col-md-2
+                                            button(type="submit").basket
+                                    form(action="").row-storage
+                                        .col-md-3
+                                            .status
+                                                .color(style="")
+                                                p В наличии
+                                        .col-md-2
+                                            .storage
+                                                p Склад 1
+                                        .col-md-2
+                                            .data
+                                                img(src="/assets/img/info.png", alt="") 
+                                                | 7 апреля
+                                                p._time после 15:00
+                                        .col-md-2
+                                            .price
+                                                p 1 050, 00
+                                        .col-md-2
+                                            .quantity
+                                                a._btn._min -
+                                                input(type="text")._quantity
+                                                a._btn._max +
+                                        .col-md-2
+                                            button(type="submit").basket
+                    .col-lg-12.row.pagination
+                        .col-lg-10.row
+                            ._title 
+                                p Товаров на странице:
+                            .btn-list
+                                a(href="#").btn._main.active 5
+                                a(href="#").btn._main 10
+                                a(href="#").btn._main 20
+                                a(href="#").btn._main 10
+                        .col-lg-2.row
+                            .row
+                                .btn-list
+                                    a(href="#").btn._main.active 1
+                                    a(href="#").btn._main 2
+                                    a(href="#").btn._main 3
+                                    p ...
+                                    a(href="#").btn._main 199
+                                    .arrow-dropdown
+                        
+        script
+            include components/slider.js
+            
+        include components/footer.pug

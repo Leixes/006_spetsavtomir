@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+html(lang="en")
+    include components/head.pug
+    body
+        include components/header.pug
+        main
+            .frame-auth
+                .login
+                    h2 Авторизация
+                    .error
+                        p Неверный логин или пароль
+                    form(action="/auth/", method="post")
+                        .box
+                            label(for="auth-email") Логин
+                            input#auth-email(type="email", name="email")
+                        .box.d-flex.flex-wrap
+                            label(for="auth-password") Пароль
+                            input#auth-password(type="password", name="password")
+                            a(href="javascript.void(0)") Напомнить пароль?
+                        .box.d-flex.align-items-center.checkbox
+                            input#noHome(type="checkbox", name="noHome", value="1")
+                            label(for="noHome") Чужой компьютер
+                        .box.d-flex.login
+                            button(type="submit").btn._main Войти
+                            a(href="#") Зарегистрироваться
+                .register
+                    h2 Регистрация
+                    .error
+                        p Неверный логин или пароль
+                    .box.d-flex.align-items-center.btn_group
+                        button(type="submit").btn._main Физ. лицо
+                        button(type="submit").btn._main.__empty Юр. лицо
+                    .info 
+                        p Введите корректные данные, в дальнейшем они понадобятся для отслеживания заказа
+                    form(action="/auth/", method="post")
+                        .box
+                            label(for="auth-name") Имя и фамилия
+                            input#auth-name(type="text", name="name")
+                        .box
+                            label(for="auth-email") Почта
+                            input#auth-email(type="email", name="email")
+                        .box
+                            label(for="auth-phone") Телефон
+                            input#auth-phone(type="phone", name="name", placeholder="+ __ (___) ___ - ___")
+                        .box.d-flex.flex-wrap
+                            label(for="auth-newpassword") Пароль
+                            input#auth-newpassword(type="password", name="newpassword")
+                        .box.d-flex.flex-wrap
+                            label(for="auth-confpassword") Подтверждение пароля
+                            input#auth-confpassword(type="password", name="confpassword")
+                        .box.d-flex.align-items-baseline.checkbox
+                            input#regOk(type="checkbox", name="regOk", value="OK")
+                            label(for="regOk") 
+                                p Я соглашаюсь на
+                                    span(onclick="window.location.href = '/'") обработку персональных данных
+                        .box.d-flex.reg
+                            button(type="submit").btn._main Зарегистрироваться
+                .registor.ur
+                    h2 Регистрация
+                    .error
+                        p Неверный логин или пароль
+                    .box.d-flex.align-items-center.btn_group
+                        button(type="submit").btn._main.__empty Физ. лицо
+                        button(type="submit").btn._main Юр. лицо
+                    .info 
+                        p Введите корректные данные, в дальнейшем они понадобятся для отслеживания заказа
+                    form(action="/auth/", method="post")
+                        .box
+                            label(for="auth-ur_name") Имя и фамилия
+                            input#auth-ur_name(type="text", name="ur_name")
+                        .box
+                            label(for="auth-ur_email") Почта
+                            input#auth-ur_email(type="ur_email", name="ur_email")
+                        .box
+                            label(for="auth-ur_phone") Телефон
+                            input#auth-ur_phone(type="phone", name="ur_name", placeholder="+ __ (___) ___ - ___")
+                        .box.d-flex.flex-wrap
+                            label(for="auth-ur_newpassword") Пароль
+                            input#auth-ur_newpassword(type="password", name="ur_newpassword")
+                        .box.d-flex.flex-wrap
+                            label(for="auth-ur_confpassword") Подтверждение пароля
+                            input#auth-ur_confpassword(type="password", name="ur_confpassword")
+                        .box.d-flex.align-items-baseline.checkbox
+                            input#ur_regOk(type="checkbox", name="regOk", value="OK")
+                            label(for="ur_regOk") 
+                                p Я соглашаюсь на
+                                    span(onclick="window.location.href = '/'") обработку персональных данных
+                        .box.d-flex.reg
+                            button(type="submit").btn._main Зарегистрироваться
+
+        include components/footer.pug   

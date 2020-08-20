@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+html(lang="en")
+    include components/head.pug
+    body
+        include components/header.pug
+        main#order
+            .container-fluid
+                    .row
+                        section#breadcrumbs.col-lg-12.p-0
+                            a(href="/") Главная
+                            | /
+                            a(href="#") Корзина
+                            | /
+                            a(href="#") Оформление заказа
+                        .col-lg-12.p-0
+                            h1.order-title Оформление заказа
+                    .row
+                        form(action="", method="post").col-lg-9
+                            .box-ordre.d-flex.flex-wrap
+                                .row.order_items.col-lg-12.line-1
+                                    .col-lg-2.col-3.p-sm-0
+                                        p Тип клиента
+                                    .col-lg-9.col-9
+                                        .radio
+                                            input#fiz(type="radio", name="client")
+                                            label(for="fiz").radio-label Физ. лицо
+                                        .radio
+                                            input#ur(type="radio", name="client") 
+                                            label(for="ur").radio-label Юр. лицо
+                                .row.order_items.col-lg-12.col-lg-12.line-2
+                                    .col-lg-2.col-3.p-sm-0
+                                        p Тип отгрузки
+                                    .col-lg-9.col-9
+                                        .radio
+                                            input#sam(type="radio", name="client")
+                                            label(for="sam").radio-label Самовывоз
+                                        .radio
+                                            input#no(type="radio", name="client") 
+                                            label(for="no").radio-label Доставка
+                                .row.order_items.col-lg-4.align-items-center.line-3
+                                    .col-lg-4.col-3.p-sm-0
+                                        p Дата доставки
+                                    .col-lg-4.d-flex.data.align-items-center.col-9
+                                        input(type="text" disabled value="24.09.2020")
+                                .row.order_items.col-lg-5.line-3.align-items-center.p-lg-0
+                                    .col-lg-4.col-3.p-sm-0
+                                        p Время доставки
+                                    .col-lg-6.col-9
+                                        select(name="")
+                                            option(value="") до 15:00
+                                            option(value="") после 15:00
+                                .row.order_items.col-lg-12.line-4
+                                    .col-lg-2.col-3.p-sm-0
+                                        p Адрес доставки
+                                    .col-lg-9.col-9
+                                        textarea(name="", cols="60", rows="2")
+                                .row.order_items.col-lg-12.align-items-center.line-5
+                                    .col-lg-2.col-3.p-sm-0
+                                        p Контактное лицо
+                                    .col-lg-9.col-9
+                                        input(type="text", value="", placeholder="Иванов Иван Иванович")
+                                .row.order_items.col-lg-12.align-items-center.line-6
+                                    .col-lg-2.col-3.p-sm-0
+                                        p Телефон
+                                    .col-lg-9.col-9
+                                        input(type="phone", value="", placeholder="+7 (***) ***-**-**")
+                                .row.order_items.col-lg-12.line-7
+                                    .col-lg-2.col-3.p-sm-0
+                                        p Комментарий
+                                    .col-lg-9.col-9
+                                        textarea(name="", cols="60", rows="2")
+                                .row.order_items.col-lg-12.line-8
+                                    .col-lg-2.col-3.p-sm-0
+                                        p Тип оплаты
+                                    .col-lg-9.col-9
+                                        .radio
+                                            input#banking(type="radio", name="client")
+                                            label(for="banking").radio-label Банковским платежом
+                                        .radio
+                                            input#card(type="radio", name="client")
+                                            label(for="card").radio-label Картой онлайн
+                                        .radio
+                                            input#cash(type="radio", name="client")
+                                            label(for="cash").radio-label Наличными
+                            .row
+                                .col-lg-12.no-gutters.d-flex
+                                    button(type="submit").btn._main Оформить заказ
+
+
+        include components/footer.pug   

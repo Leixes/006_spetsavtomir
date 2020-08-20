@@ -1,0 +1,103 @@
+header
+    nav.navbar-custom
+        .nav._header
+            .logo
+                a(href="/")
+                    img(src="/assets/img/logo.png", alt="alt")
+            ul.nav
+                li.nav-item
+                    a(href="#").nav-link О компании
+                li.nav-item
+                    a(href="#").nav-link Подбор запчастей
+                li.nav-item
+                    a(href="#").nav-link Доставка и оплата
+                li.nav-item
+                    a(href="#").nav-link Контакты
+            .tel._box
+                a(href="tel:#") 8 800 000 00 00
+                a.btn._main Обратный вызов
+        .nav._footer
+            .catalog._box
+                .dropdown
+                    button#catalogMenu(type="button" data-hidden="false").btn._main._dropdown-toggle
+                        div.control._box
+                            .bar1
+                            .bar2
+                            .bar3
+                        p Каталог товаров
+                        div.arrow
+                div(aria-labelledby="catalogMenu").dropdown-menu
+                    ._link
+                        a(href="#" data-item="Автозапчасти").dropdown-item.__item
+                            img(src="assets/img/Автозапчасти.png", alt="alt" width="24px")._nav.__ico
+                            p Автозапчасти
+                            .arrow-dropdown
+                        a(href="#" data-item="Автохимия").dropdown-item.__item
+                            img(src="assets/img/Автозапчасти.png", alt="alt" width="24px")._nav.__ico
+                            p Автохимия
+                            .arrow-dropdown
+                        a(href="#" data-item="Аккумуляторы").dropdown-item.__item
+                            img(src="assets/img/Автозапчасти.png", alt="alt" width="24px")._nav.__ico
+                            p Аккумуляторы
+                            .arrow-dropdown
+                        a(href="#" data-item="Аксессуары").dropdown-item.__item
+                            img(src="assets/img/Автозапчасти.png", alt="alt" width="24px")._nav.__ico
+                            p Аксессуары
+                            .arrow-dropdown
+                    ._box
+                        ._box-catalog.row(data-item="Автозапчасти" style='display: flex;')
+                            .col-lg-4.col-4
+                                img(src="assets/img/418.png", alt="alt")
+                                a(href="#") Webasto
+                                ul
+                                    li
+                                        a(href="#") Комплектующие для АДВЕРС
+                                    li
+                                        a(href="#") Комплектующие для ШААЗ
+                                    li
+                                        a(href="#") Комплектующие для ЭЛТРА-ТЕРМО
+                            .col-lg-4.col-4
+                                img(src="assets/img/418.png", alt="alt")
+                                a(href="#") Webasto
+                                ul
+                            .col-lg-4.col-4
+                                img(src="assets/img/418.png", alt="alt")
+                                a(href="#") Webasto
+                                ul
+                            .col-lg-4.col-4
+                                img(src="assets/img/418.png", alt="alt")
+                                a(href="#") Webasto
+                                ul
+                        ._box-catalog.row(data-item="Автохимия")
+
+            form.form-inline.my-2.my-lg-0
+                input(type="search" placeholder="Поиск..." aria-label="Search").form-control.mr-sm-2
+                button(type="submit").btn.btn-outline-success.my-2.my-sm-0
+                    .loop
+            ul.nav
+                li.nav-ico
+                    a(href="#").nav-link
+                        img(src="", alt="alt")
+                        p Заказы
+                li.nav-ico
+                    a(href="#").nav-link
+                        img(src="", alt="alt")
+                        p Документы
+                li.nav-ico
+                    a(href="#").nav-link
+                        img(src="", alt="alt")
+                        p Типовой набор
+                li.nav-ico.user
+                    a(href="#").nav-link
+                        p ООО “Авто”
+                        img(src="", alt="alt")
+            a(href="#").cart
+                img(src="", alt="alt")._box
+                ._box
+                    .box-line
+                        p 0
+                        p позиций
+                    .box-line
+                        p 0, 00₽
+                
+                
